@@ -1,0 +1,7 @@
+.upload-files > input {
+    display: none;
+}
+
+.icon-size {
+    font-size: 48px;
+}

@@ -1,0 +1,46 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Image File Uploader with DRF</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+        rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="{% static 'frontend/css/index.css' %}">
+</head>
+<body>
+
+<h1>メモ</h1>
+
+<form enctype="multipart/form-data" action="" method="post" id="memo-form">
+  {% csrf_token %}
+  <p>
+    <label for="title">タイトル</label>
+    <input type="text" id="title">
+    <input type="hidden" id="memo-id">
+  </p>
+  <p>
+    <label for="content">メモ：</label>
+    <textarea id="content"></textarea>
+  </p>
+
+  <label for="pictures" class="upload-files">
+    <span class="material-icons">
+      <i class="material-icons icon-size">add_photo_alternate</i>
+    </span>
+    <input type="file" id="pictures" multiple accept="image/*">
+  </label>
+  <div id="existences"></div>
+  <div id="additions"></div>
+
+  <p>
+    <button type="button" id="save">メモを保存</button>
+    <button type="button" id="delete">メモを削除</button>
+  </p>
+</form>
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="{% static 'frontend/js/index.js' %}"></script>
+</body>
+</html>
